@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатория Жизни | Музей Мирового океана</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Лаборатория Жизни — открытая палуба научного судна Музея Мирового океана">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">
+          Лаборатория Жизни
+          <span>Музей Мирового океана</span>
+        </div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <!-- RU -->
+    <article class="lang-content active" data-lang="ru">
+      <h1>Лаборатория Жизни</h1>
+      
+      <blockquote class="quote">
+        На земной поверхности нет химической силы более постоянно действующей, а потому и более могущественной по своим конечным последствиям, чем живые организмы, взятые в целом.
+        <cite>— В.И. Вернадский</cite>
+      </blockquote>
+
+      <p class="lead">Приветствуем вас на открытой палубе научного судна – в «Лаборатории Жизни»!</p>
+      
+      <p>Жизнь и Мировой океан связаны неразрывно. Океан – не просто трехмерное водное пространство для обитания, это сложно устроенная экологическая система, где живые организмы – главные участники и регуляторы процессов планетарного масштаба.</p>
+      
+      <p>Это они изобрели кислородный фотосинтез и изменили атмосферу Земли, повлияли на геохимические процессы, способствовали возникновению различных руд, нефти и газа, участвовали в формировании осадочных пород, строили коралловые рифы и острова. Они стали для человечества не просто ресурсом или источником материальных благ, а силой, вдохновляющей на творчество и поиск нестандартных научных, технических и архитектурных решений. Они освоили глубины океана, оседлали морские течения, научились парить над волнами.</p>
+      
+      <div class="highlight">
+        <strong>Жизнь – это вечное движение, и она происходит, пока мы строим планы.</strong><br>
+        Так не будем медлить, вперед, к новым открытиям!
+      </div>
+    </article>
+
+    <!-- EN -->
+    <article class="lang-content" data-lang="en">
+      <div class="section-label">Main text</div>
+      <h1>The Life Laboratory</h1>
+      
+      <blockquote class="quote">
+        No chemical force on Earth is more constant than living organisms taken in aggregate, none is more powerful in the long run.
+        <cite>— Vladimir Vernadsky</cite>
+      </blockquote>
+
+      <p class="lead">Welcome to the open deck of our research vessel – the Life Laboratory!</p>
+      
+      <p>Life and the World Ocean are inextricably linked. The ocean is far more than a three-dimensional aquatic habitat; it is a highly complex ecosystem where living organisms serve as the primary drivers and regulators of planetary-scale processes.</p>
+      
+      <p>It was marine life that pioneered oxygenic photosynthesis, fundamentally transforming Earth’s atmosphere. These organisms reshaped geochemical processes, drove the formation of diverse mineral ores, oil, and gas deposits, generated sedimentary rock, and engineered coral reefs and islands. Beyond serving as a mere resource or provider of material wealth for humanity, marine life remains a profound source of inspiration – sparking creativity and driving unconventional solutions across science, engineering, and architecture. From conquering the deep sea to harnessing ocean currents and taking flight above the waves, marine organisms have mastered every realm.</p>
+      
+      <div class="highlight">
+        <strong>Life is perpetual motion, unfolding even as we make our plans.</strong><br>
+        No time to lose – let the voyage of discovery begin!
+      </div>
+    </article>
+
+    <!-- ZH -->
+    <article class="lang-content" data-lang="zh">
+      <div class="section-label">导语</div>
+      <h1>生命实验室</h1>
+      
+      <blockquote class="quote">
+        地表之上，没有哪一种化学作用力，比作为整体的生物有机体更持续地发挥作用，并由此产生如此巨大的最终效应。
+        <cite>—— 弗拉基米尔・维尔纳茨基</cite>
+      </blockquote>
+
+      <p class="lead">欢迎来到科学船的露天甲板——“生命实验室”！</p>
+      
+      <p>生命与世界大洋密不可分。海洋不只是供生物栖息的三维水域，更是一套结构复杂的生态系统；生命体正是行星尺度各类过程的主要参与者与调控者。</p>
+      
+      <p>正是生命演化出了产氧光合作用，改变了地球大气环境，影响地球化学过程，促成各类矿藏、石油与天然气的形成，参与沉积岩的生成，构筑珊瑚礁与海岛。对人类而言，它们不仅仅是资源或物质财富的来源，更是一种激发创造力、探寻创新性的科学、技术和建筑设计方案的力量。海洋生物征服大洋深渊，驾驭海流，学会在浪涛之上翱翔。</p>
+      
+      <div class="highlight">
+        <strong>生命永不停歇，就在我们制定计划的当下，它依旧在演化。</strong><br>
+        那就不要再迟疑，向着全新的发现进发吧！
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank" rel="noopener">world-ocean.ru</a>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => {
+          c.classList.toggle('active', c.dataset.lang === lang);
+        });
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+</html>

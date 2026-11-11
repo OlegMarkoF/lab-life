@@ -49,6 +49,3 @@
 | [4.4.1-conchology.html](https://olegmarkof.github.io/lab-life/4.4.1-conchology.html) | ЭК 4.4.1 Конхиологическая каюта |
 | [4.4.2-reefology.html](https://olegmarkof.github.io/lab-life/4.4.2-reefology.html) | ЭК 4.4.2 Рифологическая каюта |
 
-## Как использовать
-1. Разместить папку `lab-life` на хостинге.
-2. Для каждого стенда создать QR-код, ведущий на соответствующий HTML-файл.

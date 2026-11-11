@@ -9,7 +9,7 @@
   --quote: #90e0ef;
   --card-bg: rgba(13, 33, 55, 0.85);
   --border: rgba(0, 180, 216, 0.25);
-  --font-main: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  --font-main: 'Roboto', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-quote: Georgia, 'Times New Roman', serif;
 }
 

@@ -153,12 +153,12 @@ h3 {
 p {
   margin-bottom: 1rem;
   color: var(--text);
+  /* text-align: justify; */
 }
 
 .lead {
   font-size: 1.05rem;
   color: var(--text);
-  /* text-align: justify; */
 }
 
 .quote {

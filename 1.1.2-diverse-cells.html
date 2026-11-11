@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Такие разные клетки | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни<span>ЭК 1.1.2</span></div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Такие разные клетки</h1>
+      <blockquote class="quote">Соответствие своему назначению — сущность всякой красоты.<cite>Джакомо Леопарди</cite></blockquote>
+      <p>Мир крошечных одноклеточных существ не менее разнообразен и не менее сложен, чем видимая Жизнь. Бактерии, археи, протисты. Они имеют разную молекулярную организацию, биохимию, физиологию, при этом они тесно связаны между собой, вступают в симбиоз, обмениваются элементами метаболизма.</p>
+      <p>Одноклеточные организмы различаются по форме и размерам, которые варьируют от 0,3 мкм (бактерии) до 20 см (ксенофиофоры). Большинство одноклеточных организмов невидимы для глаза человека.</p>
+      <div class="highlight">Давайте же оценим мастерство микрофотографии и насладимся красотой микромира!</div>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>The Infinite Diversity of Cells</h1>
+      <blockquote class="quote">Fitness for purpose is the essence of all beauty.<cite>Giacomo Leopardi</cite></blockquote>
+      <p>The world of microscopic, single-celled organisms is no less diverse and complex than the visible realms of life. Bacteria, archaea, protists – each group exhibits a distinct molecular structure, biochemistry, and physiology. Yet, they remain intricately interconnected, engaging in symbiosis and exchanging metabolic products.</p>
+      <p>Single-celled organisms display an immense variety of shapes and sizes, ranging from a mere 0.3 micrometres in certain bacteria to an astonishing 20 centimetres in deep-sea xenophyophores. The vast majority of these unicellular organisms are completely invisible to the human eye.</p>
+      <div class="highlight">We invite you to appreciate the artistry of photomicrography and immerse yourself in the striking beauty of the microscopic world.</div>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>形形色色的细胞</h1>
+      <blockquote class="quote">合乎自身使命，即是一切美的本质。<cite>贾科莫・莱奥帕尔迪</cite></blockquote>
+      <p>微小单细胞生物的世界，其多样性与复杂程度，丝毫不亚于肉眼可见的宏观生命。细菌、古菌、原生生物。它们拥有不同的分子构造、生化机制与生理特征，彼此之间联系紧密，形成共生关系，互相交换代谢物质。</p>
+      <p>单细胞生物在形状和大小上各不相同，从0.3微米（细菌）到20厘米（深海巨型单细胞原生生物——Xenophyophorea）不等。大多数单细胞生物肉眼不可见。</p>
+      <div class="highlight">让我们欣赏显微摄影佳作，领略微观世界之美！</div>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank" rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+</html>

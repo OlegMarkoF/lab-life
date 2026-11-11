@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Глубоководная каюта | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Глубоководная каюта</h1>
+      <p>В тёмных глубинах океана многие живые организмы способны излучать свет. Это явление называется
+        биолюминесценцией. Свечение помогает глубоководным животным охотиться, привлекать партнёров, общаться,
+        отпугивать хищников или, наоборот, становиться менее заметными на фоне слабого света сверху.</p>
+      <p>С глубиной меняется и окраска животных. В сумеречной зоне нередко встречаются красные, оранжевые и тёмные
+        организмы. Красный свет быстро поглощается водой и почти не проникает на глубину, поэтому красная окраска там
+        выглядит тёмной или почти чёрной. Такая маскировка помогает животным скрываться от хищников и подкрадываться к
+        добыче.</p>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>The Deep-Sea Cabin</h1>
+      <p>In the dark depths of the ocean, many living organisms possess the remarkable ability to emit light – a
+        phenomenon known as bioluminescence, helping deep-sea animals hunt, attract mates, communicate, deter predators,
+        or, conversely, camouflage themselves against the faint downwelling light from above.</p>
+      <p>Animal colouration also changes dramatically with depth. In the ocean’s twilight zone, red, orange, and
+        dark-coloured organisms are common. Because red wavelengths are rapidly absorbed by water and fail to penetrate
+        into the deep, a red body appears completely dark or virtually black down here. This camouflage enables animals
+        to hide from predators and stalk their prey completely undetected.</p>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>深海舱</h1>
+      <p>大洋幽暗深处，许多生物可以自身发光，该现象称为生物发光。发光有助于深海动物狩猎、吸引配偶、交流、吓退捕食者，或者相反，在来自上方的微弱光线背景下变得更加不可见。</p>
+      <p>随着深度变化，动物的颜色也会改变。在暮光带经常出现红色、橙色、深色生物。红光在水中快速被吸收，几乎无法抵达深海，因此红色生物在深海看起来近乎黑色。这种伪装有助于动物躲避捕食者并悄悄接近猎物。</p>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

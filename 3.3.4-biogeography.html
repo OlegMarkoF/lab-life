@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Биогеография | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Биогеография</h1>
+      <blockquote class="quote">В массе частностей выявить большой лик океана.<cite>Лев Зенкевич</cite></blockquote>
+      <h2>Океан на карте жизни</h2>
+      <p>Биогеография изучает, где живут морские организмы и почему они распределены именно так. На жизнь в океане
+        влияют свет, температура, солёность, глубина, течения, состав дна, кислород, пища и связи между видами. Мировой
+        океан — не однородная водная масса, а сложная система природных районов и сообществ.</p>
+      <h2>Лик океана</h2>
+      <p>Концепция биологической структуры океана Л. А. Зенкевича и В. Г. Богорова объясняет, почему жизнь в Мировом
+        океане распределена неравномерно. Действие природных факторов проявляется в трёх главных направлениях: от
+        экватора к полюсам, от континентов в открытый океан и от поверхности в глубину.</p>
+      <h2>Карты, районы, промысел</h2>
+      <p>Биогеографические знания отражаются в картах. Они помогают выделять районы океана, фаунистические комплексы и
+        зоны с разными условиями жизни. Для литорали, пелагиали и абиссали используют разные схемы районирования. Такие
+        карты важны и для промысла: они показывают, где обитают массовые виды и где образуются их скопления.</p>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>Biogeography</h1>
+      <blockquote class="quote">To discern the grand pattern of the ocean within a multitude of details.<cite>Lev
+          Zenkevich</cite></blockquote>
+      <h2>The Ocean on the Map of Life</h2>
+      <p>Marine biogeography explores where marine organisms live and why they are distributed the way they are. Life in
+        the ocean is shaped by a complex interplay of light, temperature, salinity, depth, currents, substrate
+        composition, dissolved oxygen, nutrient availability, and interspecies interactions. The World Ocean is not a
+        homogeneous mass of water, but a highly intricate system of distinct natural regions and biological communities.
+      </p>
+      <h2>The Grand Pattern of the Ocean</h2>
+      <p>The concept of the biological structure of the ocean, formulated by Lev Zenkevich and Veniamin Bogorov,
+        explains why marine life is distributed unevenly across the globe. The influence of environmental factors
+        manifests along three primary dimensions: from the equator to the poles, from the continents to the open ocean,
+        and from the surface to the deep sea.</p>
+      <h2>Maps, Regions, and Fisheries</h2>
+      <p>Biogeographical data is directly visualized through mapping. These maps help scientists delineate distinct
+        oceanic provinces, faunal complexes, and zones with varied environmental conditions. Because the shoreline, the
+        water column, and the deep sea are governed by fundamentally different ecological rules, separate
+        regionalization frameworks are utilized for the littoral, pelagic, and abyssal zones. Furthermore, these maps
+        are vital tools for commercial fisheries, pinpointing where target species thrive and identifying where their
+        dense aggregations form.</p>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>生物地理学</h1>
+      <blockquote class="quote">从大量细节中揭示海洋的伟大面貌。<cite>列夫・岑凯维奇</cite></blockquote>
+      <h2>生命地图之上的海洋</h2>
+      <p>生物地理学研究海洋生物生活在哪里，以及为什么它们如此分布。光、温度、盐度、深度、洋流、海底成分、氧气、食物和物种间的联系都影响着海洋中的生命。世界大洋并非均质的水体，而是由自然区域与生物群落构成的复杂系统。</p>
+      <h2>海洋的面貌</h2>
+      <p>列夫・岑凯维奇与弗拉基米尔・博戈罗夫提出的海洋生物结构理论，解释了海洋生命分布不均的原因。自然环境因素的影响体现在三大维度：自赤道向两极、自大陆向开阔大洋、自表层向深海。</p>
+      <h2>地图、海区、渔业</h2>
+      <p>生物地理学研究成果绘制成各类地图，用于划分大洋海区、动物群落、不同生存条件的区域。对潮间带、远洋水域和深海带采用不同的生物地理分区方案。这类地图对渔业同样意义重大，标示优势物种栖息地与生物聚集区。</p>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

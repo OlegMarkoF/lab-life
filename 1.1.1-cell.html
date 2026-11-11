@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Клетка | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">
+          Лаборатория Жизни
+          <span>Музей Мирового океана</span>
+        </div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Клетка</h1>
+      <blockquote class="quote">
+        Omnis cellula e cellula<br>Всякая клетка от клетки
+        <cite>Рудольф Вирхов</cite>
+      </blockquote>
+      <p>Всё вокруг состоит из атомов и молекул, но одни предметы — живые, а другие — нет. С чего начинается Жизнь? С наименьшей структурной единицы — клетки!</p>
+      <p>Клетка обладает всеми признаками живого: обменом веществ, ростом и размножением, раздражимостью и подвижностью. Клетки могут быть частью многоклеточного организма, а могут существовать как самостоятельный организм. Любая клетка устроена сложно, но главное, что она умеет, — сохранять и передавать из поколения в поколение генетическую информацию.</p>
+      <p>У эукариотических клеток эта информация хранится в ядре — специальной структуре, которая управляет всеми процессами жизнедеятельности и обеспечивает точное копирование ДНК при делении. У прокариот, клеток не имеющих ядра, генетическая информация хранится в цитоплазме, что, впрочем, не мешает им быть полноценными живыми организмами.</p>
+      <div class="highlight">Начнем знакомство с Жизнью с наименьшей из ее структурных единиц! Вы с нами?</div>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>The Cell</h1>
+      <blockquote class="quote">
+        Omnis cellula e cellula<br>(Every cell from a cell)
+        <cite>Rudolf Virchow</cite>
+      </blockquote>
+      <p>Everything around us is composed of atoms and molecules, yet some things are alive, and others are not. Where does life begin? It begins with its smallest structural unit – the cell!</p>
+      <p>A cell possesses all the defining characteristics of life: metabolism, growth, reproduction, response to stimuli, and motility. Cells can be part of a multicellular organism, or they can exist as independent, self-sustaining organisms. Every cell is intricately structured, but its most vital capability is the preservation and transmission of genetic information from one generation to the next.</p>
+      <p>In eukaryotic cells, this information is safeguarded within the nucleus – a specialized structure that directs all cellular processes and ensures the precise replication of DNA during division. In prokaryotes – cells lacking a nucleus – the genetic information resides directly in the cytoplasm, which in no way prevents them from functioning as fully fledged living organisms.</p>
+      <div class="highlight">Let’s begin our exploration of life with its smallest structural unit. Are you with us?</div>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>细胞</h1>
+      <blockquote class="quote">
+        Omnis cellula e cellula<br>一切细胞皆来自细胞
+        <cite>鲁道夫·魏尔肖</cite>
+      </blockquote>
+      <p>世间万物都由原子、分子构成，但有的物体拥有生命，有的却没有。生命从何开始？始于最小的结构单元 ——细胞！</p>
+      <p>细胞具备生命全部特征：新陈代谢、生长繁殖、应激反应、运动能力。细胞既可以是多细胞有机体的组成部分，也可以作为独立生命体存活。每一个细胞结构都十分复杂，而它最重要的本领，就是将遗传信息代代保存、传递下去。</p>
+      <p>真核细胞的遗传信息储存在细胞核内。细胞核这一特殊结构调控全部生命活动，并且在细胞分裂时保证 DNA 精准复制。原核细胞没有细胞核，遗传信息储存在细胞质之中，但这并不妨碍它们成为完整的生命体。</p>
+      <div class="highlight">让我们从生命最小的结构单元开始，认识生命。你准备好了吗？</div>
+    </article>
+
+    <footer class="site-footer">
+      Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank" rel="noopener">world-ocean.ru</a>
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => {
+          c.classList.toggle('active', c.dataset.lang === lang);
+        });
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конхиологическая каюта | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Конхиологическая каюта</h1>
+      <blockquote class="quote">Приложи к уху раковину: в ней шум вечной волны.<cite>Александр Грин</cite>
+      </blockquote>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>The Conchology Cabin</h1>
+      <blockquote class="quote">Put a seashell to your ear – it carries the sound of an eternal wave.<cite>Alexander
+          Grin</cite></blockquote>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>贝壳舱</h1>
+      <blockquote class="quote">把贝壳贴到耳边，里面传来永恒浪涛的回响。<cite>亚历山大・格林</cite></blockquote>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

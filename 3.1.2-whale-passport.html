@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Паспорт кита | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Инсталляция «Паспорт кита»</h1>
+      <p>Китовый паспорт – промысловый и научный документ, который в эпоху советского китобойного промысла заводился на
+        каждого добытого кита. Более 50 тысяч паспортов АКФ «Юрий Долгорукий» хранится в архиве Музея Мирового океана.
+      </p>
+      <div class="highlight">Инсталляция демонстрирует стилизованные учётные бланки и наглядно передаёт масштаб архива,
+        становясь символом исторической памяти о китобойном промысле.</div>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>Art Installation: “Whale Passport”</h1>
+      <p>A ‘whale passport’ was a specialized logging and scientific document issued for every individual whale
+        harvested during the Soviet industrial whaling era. More than 50,000 of these original logbooks from the
+        Antarctic Whaling Flotilla <em>Yury Dolgoruky</em> are preserved within the archives of the Museum of the World
+        Ocean.</p>
+      <div class="highlight">This installation features stylized record sheets that visually communicate the vast scale
+        of the archive, serving as a powerful monument to the historical memory of the whaling industry.</div>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>“鲸鱼护照”装置</h1>
+      <p>“鲸鱼护照”是苏联捕鲸时期为每头捕获的鲸鱼建立的产业和科学文件。超过5万份“尤里·多尔戈鲁基”号捕鲸船队的护照保存在世界海洋博物馆的档案中。</p>
+      <div class="highlight">该装置展示了风格化的登记表格，直观地传达了档案的规模，成为捕鲸历史记忆的象征。</div>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бионика | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Бионика</h1>
+      <blockquote class="quote">Природа — великий учитель, особенно для того, кто наблюдателен.<cite>Карло
+          Гольдони</cite></blockquote>
+      <p>Природа всегда служила человеку источником вдохновения для творчества, помогая создавать произведения искусства
+        или находить нестандартные технические решения.</p>
+      <p>Первые осознанные попытки технического воплощения природных механизмов предпринял Леонардо да Винчи. Его
+        творчество и исследования в определённой степени предвосхитили основные принципы, которые в XX веке оформились в
+        прикладную науку на стыке биологии и инженерии — бионику.</p>
+      <p>Задачей бионики является использование в технике наилучших «достижений» живой природы.</p>
+      <p>Многие из живых прототипов технических устройств ― представители биоты Мирового океана. Всестороннее изучение
+        особенностей биологии и поведения морских обитателей несёт огромные возможности для человечества в таких
+        направлениях как биомеханика, биоэнергетика, архитектура, нейронауки, разработка анализаторных систем, систем
+        ориентации и навигации и многих других.</p>
+      <div class="highlight">Как стать бионической моделью?<br>Подсказать человечеству хорошее техническое решение
+        сложной проблемы!</div>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>Bionics</h1>
+      <blockquote class="quote">Nature is a universal and sure teacher for those who observe it.<cite>Carlo
+          Goldoni</cite></blockquote>
+      <p>Nature has always served as a profound source of inspiration for humanity, guiding artistic creation and
+        revealing innovative technical solutions.</p>
+      <p>The earliest conscious attempts to engineer mechanics modelled after natural systems were pioneered by Leonardo
+        da Vinci. His visionary designs and investigations fundamentally anticipated the core principles that would
+        coalesce in the 20th century into an applied science at the intersection of biology and engineering: bionics.
+      </p>
+      <p>The primary objective of bionics is to harness the highly optimized ‘achievements’ of the living world and
+        integrate them into technological design.</p>
+      <p>Many of the biological prototypes for modern technological devices are representatives of the World Ocean’s
+        biota. Comprehensive studies of the unique biology and behavioural patterns of marine organisms unlock immense
+        possibilities for humanity across fields such as biomechanics, bioenergetics, architecture, neuroscience, and
+        the development of specialized sensory, orientation, and navigation systems.</p>
+      <div class="highlight">How does an organism become a bionic model?<br>By inspiring humanity with an elegant
+        engineering solution to a complex challenge!</div>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>仿生学</h1>
+      <blockquote class="quote">大自然是伟大的导师，尤其是对于善于观察的人来说。<cite>卡洛・哥尔多尼</cite></blockquote>
+      <p>大自然一直是为人类提供创造灵感、帮助创作艺术作品和寻找非标准技术解决方案的源泉。</p>
+      <p>列奥纳多・达・芬奇最早有意识尝试把自然界的生物机制转化为技术设计。他的创造和研究在某种程度上预见了20世纪在生物学和工程学交叉领域形成的一门应用科学——仿生学的主要原理。</p>
+      <p>仿生学的任务是在技术中利用生物界最佳的“成就”。</p>
+      <p>许多技术装置的生物原型是世界海洋生物群的代表。全面研究海洋居民的生物学和行为特征，为人类在生物力学、生物能源、建筑学、神经科学、分析系统、定向导航系统等许多领域提供了巨大的可能性。</p>
+      <div class="highlight">如何成为仿生学的原型？<br>为人类提供解决复杂工程难题的优秀思路！</div>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

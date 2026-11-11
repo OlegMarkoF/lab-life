@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Водоросли | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Водоросли</h1>
+      <blockquote class="quote">Нет красивее чудес!<br>Это настоящий лес!<br>Только вырос он тайком<br>Под водой на дне
+        морском.<cite>Лариса Шишкина</cite></blockquote>
+      <p>Их можно встретить везде, где есть вода: в почве, лужах, реках, морях, горячих источниках и ледниках. Возможно,
+        именно поэтому их называют водорослями. Среди них есть как микроскопические одноклеточные организмы самых
+        разнообразных форм, так и гиганты, достигающие в длину 50 метров.</p>
+      <p>Водоросли были одними из первых многоклеточных организмов на Земле. На сегодняшний день описано более 100 тысяч
+        видов, и это число продолжает расти по мере изучения их биоразнообразия.</p>
+      <p>Значение водорослей в природе огромно: они создают органические вещества, которые потребляют обитатели Мирового
+        океана и суши. При фотосинтезе водоросли производят от 50 до 80% всего кислорода, выделяемого в атмосферу
+        планеты.</p>
+      <div class="highlight">Задумайтесь: каждый второй наш вдох – подарок океана!</div>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>Algae</h1>
+      <blockquote class="quote">No greater wonders could you meet!<br>A forest, wondrous and complete,<br>That grew in
+        secret, out of sight,<br>Beneath the waves, in ocean’s night.<cite>Larisa Shishkina</cite></blockquote>
+      <p>Algae can be found wherever water is present: within soils, puddles, rivers, seas, hot springs, and even
+        glaciers. They range from microscopic, single-celled organisms of diverse shapes to massive giants stretching up
+        to 50 metres in length. Algae were among the earliest multicellular organisms on Earth. Today, over 100,000
+        species have been catalogued, and this number continues to climb as we explore their vast biodiversity.</p>
+      <p>The ecological significance of algae is monumental: they synthesize the organic matter that sustains the
+        inhabitants of both the World Ocean and the land. Furthermore, through photosynthesis, algae produce between 50%
+        and 80% of all oxygen released into our planet’s atmosphere.</p>
+      <div class="highlight">Consider this: every second breath we take is a gift from the ocean!</div>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>藻类</h1>
+      <blockquote class="quote">没有比这更美的奇迹了！<br>这是一片真正的森林！<br>只是它悄然生长<br>在海底，在大海之底<br><cite>拉里萨・希什金娜</cite>
+      </blockquote>
+      <p>它们可以在任何有水的地方找到：土壤、水洼、江河大海、热泉、冰川。或许正因如此，它们才被叫做藻类。其中既有形态各异的微小单细胞生物，也有长达50米的巨型生物。</p>
+      <p>藻类是地球上最早出现的多细胞生物类群之一。目前已记录物种超十万种，随着生物多样性研究推进，数字还在持续增长。</p>
+      <p>藻类在自然界意义重大：合成有机物，供养陆地与海洋生物。在光合作用中，藻类产生了地球大气中排放的全部氧气的50%到80%。</p>
+      <div class="highlight">请想一想：我们每吸两次气中，就有一次是来自海洋的馈赠！</div>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

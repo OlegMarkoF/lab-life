@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Океан в цифре | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <div class="section-label">Законы и принципы</div>
+      <h1>Океан в цифре</h1>
+      <div class="data-grid">
+        <div class="data-item">
+          <strong>~250 000</strong>
+          принятых морских видов зарегистрировано в базе WoRMS — Всемирном реестре морских видов. Базу постоянно
+          обновляют: уточняют названия, классификацию, открывают новые виды.
+        </div>
+        <div class="data-item">
+          <strong>~2 000</strong>
+          новых морских видов учёные описывают ежегодно. В 2025 году добавлено 2 600 новых для науки морских видов,
+          включая современные и ископаемые формы.
+        </div>
+        <div class="data-item">
+          <strong>360 000 000 км²</strong>
+          — площадь океана, средняя глубина — 3 682 м. Это крупнейшее пригодное для жизни пространство планеты.
+        </div>
+        <div class="data-item">
+          <strong>Более половины</strong>
+          поверхности Земли занимает дно Мирового океана. Это самая большая поверхность для жизни на планете.
+        </div>
+      </div>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <div class="section-label">Laws and Principles</div>
+      <h1>The Ocean in Numbers</h1>
+      <div class="data-grid">
+        <div class="data-item">
+          <strong>~250,000</strong>
+          accepted marine species are documented in the World Register of Marine Species (WoRMS). The database is
+          continuously updated, refining taxonomic names and classifications while incorporating newly discovered
+          species.
+        </div>
+        <div class="data-item">
+          <strong>~2,000</strong>
+          new marine species are described by scientists annually. In 2025 alone, 2,600 newly described marine species
+          were added, encompassing both extant and fossil forms.
+        </div>
+        <div class="data-item">
+          <strong>360,000,000 km²</strong>
+          — the area of the ocean, with an average depth of 3,682 meters. The World Ocean represents the largest
+          habitable space on our planet.
+        </div>
+        <div class="data-item">
+          <strong>More than half</strong>
+          of the Earth’s surface is covered by the ocean floor — the single largest continuous habitat on the planet.
+        </div>
+      </div>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <div class="section-label">规律与原则</div>
+      <h1>数字中的海洋</h1>
+      <div class="data-grid">
+        <div class="data-item">
+          <strong>约 250,000</strong>
+          个被接受的海洋物种登记在世界海洋物种名录（WoRMS）数据库中。该数据库不断更新：澄清名称、分类，发现新物种。
+        </div>
+        <div class="data-item">
+          <strong>约 2,000</strong>
+          个新的海洋物种科学家每年描述。2025 年新增了 2,600 个科学界新发现的海洋物种，包括现代和化石形态。
+        </div>
+        <div class="data-item">
+          <strong>360,000,000 平方公里</strong>
+          是海洋面积，平均深度为 3,682 米。这是地球上最大的宜居空间。
+        </div>
+        <div class="data-item">
+          <strong>一半以上</strong>
+          的地球地表被大洋海床占据，是这颗行星规模最大的生命栖息地表。
+        </div>
+      </div>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

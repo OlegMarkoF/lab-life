@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Многообразие жизни | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Многообразие жизни</h1>
+      <blockquote class="quote">Море – это многоэтажное здание. В каждом «этаже» живут свои обитатели, которые не
+        поднимаются в верхние и не спускаются в нижние этажи.<cite>Александр Беляев</cite></blockquote>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>The Diversity of Life</h1>
+      <blockquote class="quote">The sea is like a multi-storey building. Each ‘floor’ is home to its own inhabitants,
+        who neither ascend to the upper levels nor descend to the lower stories.<cite>Alexander Belyaev</cite>
+      </blockquote>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>生命的多样性</h1>
+      <blockquote class="quote">海洋就像一栋多层楼房，每一层都栖息着专属住户，它们既不会向上，也不会向下随意穿梭。<cite>亚历山大・别利亚耶夫</cite></blockquote>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

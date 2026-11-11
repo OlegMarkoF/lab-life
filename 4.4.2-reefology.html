@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рифологическая каюта | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">Лаборатория Жизни</div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Рифологическая каюта</h1>
+      <blockquote class="quote">Час придет — и гордо над волнами,<br>Раздробив их влажный изумруд,<br>Новый остров,
+        созданный веками,<br>С торжеством кораллы вознесут…<cite>Дмитрий Мережковский</cite></blockquote>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>The Reefology Cabin</h1>
+      <blockquote class="quote">The hour will come – and proud above the crest,<br>Shattering their humid emerald
+        gleam,<br>A brand-new island, centuries compressed,<br>Corals will raise in triumph supreme…<cite>Dmitry
+          Merezhkovsky</cite></blockquote>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>珊瑚礁舱</h1>
+      <blockquote class="quote">时日终将到来——骄傲地凌驾于浪涛之上，<br>击碎它们湿润的翡翠般的表层，<br>一座由数百年光阴铸就的全新岛屿，<br>珊瑚们将以盛大的姿态托举而出……<cite>——
+          德米特里・梅列日科夫斯基</cite></blockquote>
+    </article>
+
+    <footer class="site-footer">Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank"
+        rel="noopener">world-ocean.ru</a></footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>

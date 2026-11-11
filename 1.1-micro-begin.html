@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Всему начало | Лаборатория Жизни</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">Ж</div>
+        <div class="logo-text">
+          Лаборатория Жизни
+          <span>Музей Мирового океана</span>
+        </div>
+        
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <article class="lang-content active" data-lang="ru">
+      <h1>Всему начало</h1>
+      <blockquote class="quote">
+        Отыщи всему начало, и ты многое поймешь
+        <cite>Козьма Прутков</cite>
+      </blockquote>
+      <p>Почти три четверти времени жизнь на Земле существовала лишь как мир одноклеточных микроскопических существ.
+        Именно их деятельности современная планета обязана своим обликом.</p>
+      <p>В океане живет огромное количество представителей микромира. Один миллилитр поверхностной морской воды содержит
+        около миллиона живых бактерий и других видов одноклеточных микробов. Общая глобальная популяция океанических
+        микробов достигает 100 октиллионов живых клеток.</p>
+      <div class="card">
+        <p style="font-family:monospace; font-size:0.9rem; word-break:break-all; color:var(--accent-soft);">
+          100 000 000 000 000 000 000 000 000 000</p>
+        <p class="meta">Так что океаны — крупнейший «резервуар» жизни на Земле.</p>
+      </div>
+      <p>Одноклеточные микроорганизмы занимают огромное разнообразие экологических ниш; их роли в разных экосистемах
+        различны, но это всегда главные роли!</p>
+      <p>Микрожизнь необходимо изучать пристально, ведь это начальное звено Жизни.</p>
+      <div class="highlight">Как устроен мир одноклеточных существ на нашей планете? Давайте разбираться вместе!</div>
+    </article>
+
+    <article class="lang-content" data-lang="en">
+      <h1>The Root of Everything</h1>
+      <blockquote class="quote">
+        Trace everything back to its origin, and you will understand much.
+        <cite>Kozma Prutkov</cite>
+      </blockquote>
+      <p>For nearly three-quarters of its history, life on Earth existed solely as a world of single-celled, microscopic
+        organisms. Our modern planet owes its very character to their activities.</p>
+      <p>The ocean is home to an astronomical abundance of microbes. A single millilitre of surface seawater contains
+        roughly one million living bacteria and other single-celled organisms. Globally, the total oceanic microbial
+        population reaches a staggering 100 octillion living cells – that is</p>
+      <div class="card">
+        <p style="font-family:monospace; font-size:0.9rem; word-break:break-all; color:var(--accent-soft);">
+          100,000,000,000,000,000,000,000,000,000!</p>
+        <p class="meta">Consequently, the oceans represent the largest living reservoir on Earth.</p>
+      </div>
+      <p>Single-celled microorganisms occupy an immense diversity of ecological niches. While their functions vary
+        across different ecosystems, they consistently play the leading roles.</p>
+      <p>We must study microbial life closely, for it is the baseline of all life.</p>
+      <div class="highlight">How is the single-celled world structured on our planet? Let’s explore together!</div>
+    </article>
+
+    <article class="lang-content" data-lang="zh">
+      <h1>万物之始</h1>
+      <blockquote class="quote">
+        找到万物的开端，你就会读懂许多事理。
+        <cite>科济马・普鲁特科夫</cite>
+      </blockquote>
+      <p>地球生命将近四分之三的时间，都只以单细胞微小生物的形态存在。正是这些微小生命的活动，塑造出如今这颗星球的面貌。</p>
+      <p>海洋中生存着数量极其庞大的微观生物。每毫升表层海水中约有一百万个活细菌及其他单细胞微生物。海洋微生物的全球总种群数量高达10²⁹个活细胞（100 000 000 000 000 000 000 000 000 000）。
+      </p>
+      <div class="card">
+        <p class="meta">因此，海洋是地球上最大的生命“存储库”。</p>
+      </div>
+      <p>单细胞微生物占据着极其多样的生态位；它们在不同生态系统中扮演的角色各有不同，但无一例外都是核心角色！</p>
+      <p>必须仔细研究微观生命，因为它是生命最初的一环。</p>
+      <div class="highlight">我们这颗星球上的单细胞生物世界究竟是什么模样？让我们一同来探寻！</div>
+    </article>
+
+    <footer class="site-footer">
+      Музей Мирового океана · <a href="https://www.world-ocean.ru" target="_blank" rel="noopener">world-ocean.ru</a>
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-content').forEach(c => {
+          c.classList.toggle('active', c.dataset.lang === lang);
+        });
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      });
+    });
+  </script>
+</body>
+
+</html>
